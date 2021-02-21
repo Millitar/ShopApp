@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class SqlJava {
+public class Conn {
     final static String jdbcURL = "jdbc:mysql://localhost:3306/sklep";
     final static String user = "root";
     final static String pass = "militar";
@@ -28,11 +28,13 @@ public class SqlJava {
     public void viewAsort() throws SQLException {
         ResultSet resultSet = statement.executeQuery("select * from sklep.asortyment");
         while (resultSet.next()){
-            System.out.println(resultSet.getString(1)+" "+resultSet.getString(2));
+            System.out.println(resultSet.getString(1)+" "+resultSet.getString(2)
+                    +" "+resultSet.getString(3)
+                    +" "+resultSet.getString(4));
         }
     }
 
-    public void addAsort(){
-        String
+    public void resltSet(String sql) throws SQLException {
+        ResultSet resultSet = statement.executeQuery(sql);
     }
 }
