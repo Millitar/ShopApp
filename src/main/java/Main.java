@@ -30,6 +30,9 @@ public class Main {
                 case 3 :
                     conn.sale();
                     break;
+
+                default:
+                    System.out.println();
             }
         }
 
