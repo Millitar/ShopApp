@@ -24,10 +24,11 @@ public class Main {
                     conn.viewAsort();
                     break;
                 case 2 :
-                    System.out.println("Podaj kod kreskowy");
-                    conn.valueFormIlosc();
-                    sqlAsortyment.sale();
-                    System.out.println(sqlAsortyment.getIlosc());
+                    conn.resltSet(sqlAsortyment.addAsort());
+                    break;
+
+                case 3 :
+                    conn.sale();
                     break;
             }
         }

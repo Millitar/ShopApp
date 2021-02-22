@@ -29,17 +29,22 @@ public class Conn {
         }
     }
 
-    public void valueFormIlosc() throws SQLException {
+    public void sale() throws SQLException {
+        System.out.println("Podaj kod kreskowy sprzedanego towaru");
         String kod_kreskowy = scanner.next();
-        int d = Integer.parseInt(kod_kreskowy);
+        int valueKOD = Integer.parseInt(kod_kreskowy);
+
+        System.out.println("Podaj ilosc sprzedanego towaru");
+        int different = scanner.nextInt();
+
         int value=0;
-        ResultSet resultSet = statement.executeQuery("SELECT ilosc from asortyment WHERE kod_kreskowy = "+d);
+        ResultSet resultSet = statement.executeQuery("SELECT ilosc from asortyment WHERE kod_kreskowy = "+valueKOD);
         while (resultSet.next()){
             value=resultSet.getInt("ilosc");
         }
-        System.out.println(value);
-        sqlAsortyment.setIlosc(value);
-        System.out.println(sqlAsortyment.getIlosc());
+
+        value-=different;
+        statement.executeUpdate("Update asortyment SET ilosc="+ value +" where kod_kreskowy ="+valueKOD);
     }
 
 

@@ -58,23 +58,7 @@ public class SqlAsortyment {
 
         return "INSERT INTO asortyment " + "VALUES ("+kod_kreskowy+",'McBeal',"+cena+","+ilosc+")";
     }
-
-//    public String sale() throws SQLException {
-//
-//        System.out.println("Podaj ilosc sprzedanego towaru");
-//        int value = scanner.nextInt();
-//        System.out.println(ilosc);
-////        ilosc-=value;
-//        System.out.println(kod_kreskowy);
-//        System.out.println(ilosc);
-//        return "Update asortyment SET ilosc="+ value+" where kod_kreskowy =" +kod_kreskowy;
-//
-//    }
-
-
-//    public void pokaz(){
-//        System.out.println(kod_kreskowy);
-//    }
+    
 
 
 
