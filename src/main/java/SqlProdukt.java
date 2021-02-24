@@ -18,8 +18,13 @@ public class SqlProdukt {
         energia = scanner.nextDouble();
     }
 
-    private void scannNazwa(){
+    private void scannNazwa(String choice){
         System.out.println("Podaj nazwe produktu");
+        if(choice.equals("delete")){
+            System.out.println("który chcesz usunąć");
+        }else if (choice.equals("add")){
+            System.out.println("który chcesz dodać");
+        }
         nazwa = scanner.next();
     }
 
@@ -27,14 +32,20 @@ public class SqlProdukt {
         String pom = kod_kreskowy.substring(7,12);
         kod_kreskowy_producenta = Integer.parseInt(pom);
     }
-    
+
 
     public String addProduct(){
         scannK_k();
         scannEnergia();
         kodKreskowyProducentaSubstring();
-        scannNazwa();
+        scannNazwa("add");
 
         return "INSERT INTO produkt(kod_kreskowy, kod_kreskowy_produktu, wartosci_energetyczna, nazwa) VALUE ("+kod_kreskowy+","+kod_kreskowy_producenta+","+energia+","+nazwa+")";
+    }
+
+    public String deleteProduct(){
+        scannNazwa("delete");
+
+        return "Delete from produkt where nazwa ="+nazwa;
     }
 }

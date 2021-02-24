@@ -33,10 +33,12 @@ public class Main {
                     break;
 
                 case 4 :
-                    sqlProdukt.test();
+                    conn.resltSet(sqlProdukt.addProduct());
+                    break;
 
                 default:
                     System.out.println();
+                    break;
             }
         }
 
