@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         SqlAsortyment sqlAsortyment = new SqlAsortyment();
+        SqlProdukt sqlProdukt = new SqlProdukt();
 
         Conn conn = new Conn();
         Scanner scanner = new Scanner(System.in);
@@ -30,6 +31,9 @@ public class Main {
                 case 3 :
                     conn.sale();
                     break;
+
+                case 4 :
+                    sqlProdukt.test();
 
                 default:
                     System.out.println();
