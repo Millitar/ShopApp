@@ -1,3 +1,5 @@
+import Sql.SqlAsortyment;
+
 import java.sql.*;
 import java.util.Scanner;
 
@@ -60,4 +62,5 @@ public class Conn {
     public void resltSet(String sql) throws SQLException {
         ResultSet resultSet = statement.executeQuery(sql);
     }
+
 }

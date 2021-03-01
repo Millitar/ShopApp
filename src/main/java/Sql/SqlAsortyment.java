@@ -1,3 +1,5 @@
+package Sql;
+
 import java.sql.*;
 import java.util.Scanner;
 
@@ -5,8 +7,15 @@ public class SqlAsortyment {
     private String kod_kreskowy;
     private double cena;
     private int ilosc;
+    private String nazwa;
 
+    public String getNazwa() {
+        return nazwa;
+    }
 
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
+    }
 
     Scanner scanner = new Scanner(System.in);
 
@@ -56,7 +65,8 @@ public class SqlAsortyment {
         scannIlosc();
         scannCena();
 
-        return "INSERT INTO asortyment " + "VALUES ("+kod_kreskowy+",'McBeal',"+cena+","+ilosc+")";
+
+        return "INSERT INTO asortyment " + "VALUES ("+kod_kreskowy+","+cena+","+ilosc+")";
     }
     
 

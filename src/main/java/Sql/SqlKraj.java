@@ -1,3 +1,5 @@
+package Sql;
+
 import java.util.Scanner;
 
 public class SqlKraj {

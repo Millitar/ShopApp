@@ -1,8 +1,10 @@
+package Sql;
+
 import java.util.Scanner;
 
 public class SqlProdukt {
     private String kod_kreskowy;
-    private int kod_kreskowy_producenta;
+    private int kodKreskowyProduktu;
     private double energia;
     private String nazwa;
 
@@ -30,7 +32,7 @@ public class SqlProdukt {
 
     private void kodKreskowyProducentaSubstring(){
         String pom = kod_kreskowy.substring(7,12);
-        kod_kreskowy_producenta = Integer.parseInt(pom);
+        kodKreskowyProduktu = Integer.parseInt(pom);
     }
 
 
@@ -40,7 +42,7 @@ public class SqlProdukt {
         kodKreskowyProducentaSubstring();
         scannNazwa("add");
 
-        return "INSERT INTO produkt(kod_kreskowy, kod_kreskowy_produktu, wartosci_energetyczna, nazwa) VALUE ("+kod_kreskowy+","+kod_kreskowy_producenta+","+energia+","+nazwa+")";
+        return "INSERT INTO produkt(kod_kreskowy, kod_kreskowy_produktu, wartosci_energetyczna, nazwa) VALUE ("+kod_kreskowy+","+ kodKreskowyProduktu +","+energia+","+nazwa+")";
     }
 
     public String deleteProduct(){
