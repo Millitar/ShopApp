@@ -1,4 +1,4 @@
-import Sql.SqlAsortyment;
+//import Sql.SqlAsortyment;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -8,7 +8,7 @@ public class Conn {
     final static String user = "root";
     final static String pass = "militar";
 
-    SqlAsortyment sqlAsortyment = new SqlAsortyment();
+//    SqlAsortyment sqlAsortyment = new SqlAsortyment();
     Scanner scanner = new Scanner(System.in);
 
     Connection connection;
@@ -31,6 +31,10 @@ public class Conn {
         }
     }
 
+    public void resltSet(String sql) throws SQLException {
+        statement.executeUpdate(sql);
+    }
+
     public void sale() throws SQLException {
         System.out.println("Podaj kod kreskowy sprzedanego towaru");
         String kod_kreskowy = scanner.next();
@@ -50,17 +54,16 @@ public class Conn {
     }
 
 
-    public void viewAsort() throws SQLException {
+    public void viewAsortyment() throws SQLException {
         ResultSet resultSet = statement.executeQuery("select * from sklep.asortyment");
         while (resultSet.next()){
-            System.out.println(resultSet.getString(1)+" "+resultSet.getString(2)
-                    +" "+resultSet.getString(3)
-                    +" "+resultSet.getString(4));
+            System.out.println(resultSet.getString(1)
+                    +" "+resultSet.getString(2)
+                    +" "+resultSet.getString(3));
         }
     }
 
-    public void resltSet(String sql) throws SQLException {
-        ResultSet resultSet = statement.executeQuery(sql);
-    }
 
 }
+
+//5903978396357

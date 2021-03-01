@@ -36,6 +36,7 @@ public class SqlProducent {
         kodKraju = Integer.parseInt(pom);
     }
 
+
     public String addProducent(){
         scannKodKreskowy();
         scannNazwaFirmy();

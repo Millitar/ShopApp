@@ -1,6 +1,4 @@
-import Sql.SqlAsortyment;
-import Sql.SqlProdukt;
-import Sql.SqlProducent
+import Sql.*;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -12,6 +10,7 @@ public class Main {
         SqlAsortyment sqlAsortyment = new SqlAsortyment();
         SqlProdukt sqlProdukt = new SqlProdukt();
         SqlProducent sqlProducent = new SqlProducent();
+        SqlKraj sqlKraj = new SqlKraj();
 
 
         Conn conn = new Conn();
@@ -28,7 +27,7 @@ public class Main {
             switch (choice){
 
                 case 1 :
-                    conn.viewAsort();
+                    conn.viewAsortyment();
                     break;
 
                 case 2 :
@@ -40,6 +39,7 @@ public class Main {
                     break;
 
                 case 4 :
+//                    long a = 5903978396357L;
                     conn.resltSet(sqlProdukt.addProduct());
                     break;
 
@@ -51,9 +51,22 @@ public class Main {
                     conn.resltSet(sqlProducent.addProducent());
                     break;
 
+                case 7 :
+                    conn.resltSet(sqlProducent.deleteProducent());
+                    break;
+
+                case 8 :
+                    conn.resltSet(sqlKraj.addKraj());
+                    break;
+
+                case 9 :
+                    conn.resltSet(sqlKraj.deleteKraj());
+                    break;
 
                 default:
-                    System.out.println();
+                    System.out.println("1-Wyświetlenie asortymentu\n" +
+                            "Dodanie asorytmentu\n" +
+                            "");
                     break;
             }
         }

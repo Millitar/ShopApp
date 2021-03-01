@@ -42,7 +42,11 @@ public class SqlProdukt {
         kodKreskowyProducentaSubstring();
         scannNazwa("add");
 
-        return "INSERT INTO produkt(kod_kreskowy, kod_kreskowy_produktu, wartosci_energetyczna, nazwa) VALUE ("+kod_kreskowy+","+ kodKreskowyProduktu +","+energia+","+nazwa+")";
+        var kodKreskowyLong = Long.parseLong(kod_kreskowy);
+
+        System.out.println(kodKreskowyLong);
+
+        return "INSERT INTO produkt(kod_kreskowy, kod_kreskowy_produktu, wartosci_energetyczna, nazwa) VALUE ("+kodKreskowyLong+","+ kodKreskowyProduktu +","+energia+","+nazwa+")";
     }
 
     public String deleteProduct(){
