@@ -27,8 +27,8 @@ public class SqlProducent {
     }
 
     private void kodKreskowyProducentaSubstring(){
-        String pom = kodKreskowy.substring(2,6);
-        kodKreskowyProducenta = pom;
+//        String pom = kodKreskowy.substring(2,6);
+        kodKreskowyProducenta = kodKreskowy.substring(2,6);
     }
 
     private void kodKrajuSubstring(){
@@ -44,7 +44,7 @@ public class SqlProducent {
         kodKrajuSubstring();
         kodKreskowyProducentaSubstring();
 
-        return "INSERT INTO producent(kod_kreskowy, kod_kreskowy_producenta, nazwa_firmy, siedziba_firmy, kod_kraju) VALUE ("+kodKreskowy+","+kodKreskowyProducenta+","+nazwaFirmy+","+siedzibaFirmy+","+kodKraju+")";
+        return "INSERT INTO producent(kod_kreskowy, kod_kreskowy_producenta, nazwa_firmy, siedziba_firmy, kod_kraju)"+" VALUE ("+kodKreskowy+","+kodKreskowyProducenta+","+nazwaFirmy+","+siedzibaFirmy+","+kodKraju+")";
     }
 
     public String deleteProducent(){

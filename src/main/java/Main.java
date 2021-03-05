@@ -16,7 +16,7 @@ public class Main {
         Conn conn = new Conn();
         Scanner scanner = new Scanner(System.in);
 
-        int choice=0;
+        int choice;
         Boolean loop = true;
 
         while (true){
@@ -39,7 +39,6 @@ public class Main {
                     break;
 
                 case 4 :
-//                    long a = 5903978396357L;
                     conn.resltSet(sqlProdukt.addProduct());
                     break;
 
@@ -65,7 +64,7 @@ public class Main {
 
                 default:
                     System.out.println("1-Wyświetlenie asortymentu\n" +
-                            "Dodanie asorytmentu\n" +
+                            "2-Dodanie asorytmentu\n" +
                             "");
                     break;
             }

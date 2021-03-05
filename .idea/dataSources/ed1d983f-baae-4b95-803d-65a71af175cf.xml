@@ -1068,109 +1068,101 @@
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <key id="341" parent="334" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>kod_kreskowy</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="342" parent="335" name="kod_kraju">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="343" parent="335" name="nazwa_kraju">
-      <Position>2</Position>
-      <DataType>varchar(50)|0s</DataType>
-    </column>
-    <key id="344" parent="335" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>kod_kraju</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="345" parent="336" name="id_producenta">
-      <Position>1</Position>
+    <column id="341" parent="334" name="id_asorytmentu">
+      <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="346" parent="336" name="kod_kreskowy">
+    <key id="342" parent="334" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_asorytmentu</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="343" parent="335" name="kod_kraju">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="344" parent="335" name="nazwa_kraju">
       <Position>2</Position>
-      <DataType>bigint(20)|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
     </column>
-    <column id="347" parent="336" name="kod_kreskowy_producenta">
+    <key id="345" parent="335" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>kod_kraju</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="346" parent="336" name="kod_kreskowy_producenta">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="347" parent="336" name="nazwa_firmy">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="348" parent="336" name="siedziba_firmy">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="348" parent="336" name="nazwa_firmy">
+    <column id="349" parent="336" name="kod_kraju">
       <Position>4</Position>
-      <DataType>varchar(100)|0s</DataType>
-    </column>
-    <column id="349" parent="336" name="siedziba_firmy">
-      <Position>5</Position>
-      <DataType>varchar(100)|0s</DataType>
-    </column>
-    <column id="350" parent="336" name="kod_kraju">
-      <Position>6</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <index id="351" parent="336" name="fk_KodKreskowyProducent">
-      <ColNames>kod_kreskowy</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="352" parent="336" name="fk_KodKraju">
+    <index id="350" parent="336" name="kod_kraju_FK">
       <ColNames>kod_kraju</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="353" parent="336" name="PRIMARY">
+    <key id="351" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id_producenta</ColNames>
+      <ColNames>kod_kreskowy_producenta</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="354" parent="336" name="fk_KodKreskowyProducent">
-      <ColNames>kod_kreskowy</ColNames>
-      <RefTableName>asortyment</RefTableName>
-      <RefColNames>kod_kreskowy</RefColNames>
-    </foreign-key>
-    <foreign-key id="355" parent="336" name="fk_KodKraju">
+    <foreign-key id="352" parent="336" name="kod_kraju_FK">
       <ColNames>kod_kraju</ColNames>
       <RefTableName>kraj</RefTableName>
       <RefColNames>kod_kraju</RefColNames>
     </foreign-key>
-    <column id="356" parent="337" name="id_produktu">
+    <column id="353" parent="337" name="kod_kreskowy">
       <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="354" parent="337" name="kod_kreskowy_produktu">
+      <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="357" parent="337" name="kod_kreskowy">
-      <Position>2</Position>
-      <DataType>bigint(20)|0s</DataType>
-    </column>
-    <column id="358" parent="337" name="kod_kreskowy_produktu">
+    <column id="355" parent="337" name="kod_kreskowy_producenta">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="359" parent="337" name="wartosci_energetyczna">
+    <column id="356" parent="337" name="nazwa">
       <Position>4</Position>
-      <DataType>double|0s</DataType>
-    </column>
-    <column id="360" parent="337" name="nazwa">
-      <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
     </column>
-    <index id="361" parent="337" name="fk_KodKreskowyProdukt">
-      <ColNames>kod_kreskowy</ColNames>
+    <column id="357" parent="337" name="wartosc_energetyczna">
+      <Position>5</Position>
+      <DataType>double|0s</DataType>
+    </column>
+    <index id="358" parent="337" name="kod_kreskowy_producenta_FK">
+      <ColNames>kod_kreskowy_producenta</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="362" parent="337" name="PRIMARY">
+    <key id="359" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id_produktu</ColNames>
+      <ColNames>kod_kreskowy</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="363" parent="337" name="fk_KodKreskowyProdukt">
-      <ColNames>kod_kreskowy</ColNames>
-      <RefTableName>asortyment</RefTableName>
-      <RefColNames>kod_kreskowy</RefColNames>
+    <foreign-key id="360" parent="337" name="kod_kreskowy_producenta_FK">
+      <ColNames>kod_kreskowy_producenta</ColNames>
+      <RefTableName>producent</RefTableName>
+      <RefColNames>kod_kreskowy_producenta</RefColNames>
     </foreign-key>
   </database-model>
 </dataSource>

@@ -25,14 +25,13 @@ public class SqlKraj {
         scannKodKraju("add");
         scannNazwaKraju();
 
-        return "INSERT INTO asortyment " + "VALUES ("+kodKraju+","+nazwaKraju+")";
-
+        return "INSERT INTO kraj " + "VALUES ("+kodKraju+","+"'"+nazwaKraju+"'"+")";
     }
 
     public String deleteKraj(){
         scannKodKraju("delete");
 
-        return "Delete from kraj where nazwa ="+kodKraju;
+        return "Delete from kraj where kod_kraju ="+kodKraju;
     }
 
 }
