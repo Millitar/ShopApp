@@ -17,9 +17,18 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int choice;
-        Boolean loop = true;
+        boolean loop = true;
+        System.out.println("1-Wyświetlenie asortymentu\n" +
+                "2-Dodanie asorytmentu\n" +
+                "3-Sprzedaż asotymentu\n" +
+                "4-Dodanie produktu\n" +
+                "5-Usuwanie produktu\n" +
+                "6-Dodanie producenta\n" +
+                "7-Usuwanie producenta\n" +
+                "8-Dodanie kraju\n" +
+                "9-Usuwanie kraju\n");
 
-        while (true){
+        while (loop){
             System.out.println("Wpisz operacje");
 
             choice = scanner.nextInt();
@@ -62,10 +71,22 @@ public class Main {
                     conn.resltSet(sqlKraj.deleteKraj());
                     break;
 
+                case 10 :
+                    loop=false;
+                    break;
+
                 default:
-                    System.out.println("1-Wyświetlenie asortymentu\n" +
+                    System.out.println(
+                            "1-Wyświetlenie asortymentu\n" +
                             "2-Dodanie asorytmentu\n" +
-                            "");
+                            "3-Sprzedaż asotymentu\n" +
+                            "4-Dodanie produktu\n" +
+                            "5-Usuwanie produktu\n" +
+                            "6-Dodanie producenta\n" +
+                            "7-Usuwanie producenta\n" +
+                            "8-Dodanie kraju\n" +
+                            "9-Usuwanie kraju\n" +
+                                    "10-Koniec programu\n");
                     break;
             }
         }
