@@ -26,7 +26,8 @@ public class Main {
                 "6-Dodanie producenta\n" +
                 "7-Usuwanie producenta\n" +
                 "8-Dodanie kraju\n" +
-                "9-Usuwanie kraju\n");
+                "9-Usuwanie kraju\n" +
+                "10-Koniec programu");
 
         while (loop){
             System.out.println("Wpisz operacje");
